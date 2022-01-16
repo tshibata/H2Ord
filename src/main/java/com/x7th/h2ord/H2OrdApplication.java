@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.x7th.h2ord;
 
 import java.io.*;
 import java.nio.*;
@@ -17,7 +17,7 @@ import org.h2.tools.Server;
 
 @SpringBootApplication
 @EnableScheduling
-public class DemoApplication {
+public class H2OrdApplication {
 
 	private static Server server;
 
