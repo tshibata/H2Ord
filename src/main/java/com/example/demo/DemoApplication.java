@@ -14,12 +14,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.servlet.handler.MappedInterceptor;
 
 import org.h2.tools.Server;
 
@@ -71,16 +67,5 @@ public class DemoApplication {
 		String name = LocalDateTime.now().format(formatter);
 		Files.copy(Paths.get("h2.mv.db"), Paths.get(name), StandardCopyOption.REPLACE_EXISTING);
 		server = Server.createTcpServer().start();
-	}
-
-	@Bean
-	PasswordEncoder encoder() {
-
-		return new BCryptPasswordEncoder();
-	}
-
-	@Bean
-	MappedInterceptor interceptor() {
-		return new MappedInterceptor(new String[]{"/**"}, new XSInterceptor());
 	}
 }
