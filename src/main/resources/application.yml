@@ -1,31 +1,5 @@
-server:
-  port: 8080
-  servlet:
-    session:
-      timeout: 3600
-spring:
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:tcp://localhost:9092/./h2
-    username: sa
-    password: ""
-  jpa:
-    #show-sql: true
-  session:
-    store-type: jdbc
 app:
-  open-entry: true
-  admin-id: 1
   backup:
     cron: "0 0 0 * * *"
     file: "eHH'.mv.db'"
-  prohibited-patterns:
-    username:
-      1_too_short_username: "^.{0,4}$"
-      2_too_long_username: "^.{16,}$"
-      3_wrong_letter_in_username: "[^A-Za-z0-9-]"
-    password:
-      1_too_short_password : "^.{0,4}$"
-      2_too_long_password : "^.{16,}$"
-      3_wrong_letters_in_password: "[^!-~]"
 
