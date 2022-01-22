@@ -1,5 +1,5 @@
 app:
   backup:
     cron: "0 0 0 * * *"
-    file: "eHH'.mv.db'"
+    file: "eHH"
 

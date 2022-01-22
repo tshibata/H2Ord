@@ -1,4 +1,5 @@
 *.db
+*.zip
 .mvn
 
 HELP.md
